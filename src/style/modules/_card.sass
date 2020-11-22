@@ -1,0 +1,33 @@
+$avatar-width: 50px
+
+.card
+    transition: box-shadow 0.25s linear
+    &:hover
+        box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.3)
+    &-title
+        margin-top: 5px
+        color: black
+    &-text
+        color: black
+        @include media-breakpoint-down(xs)
+            font-size: 12px
+    &-body
+        @include media-breakpoint-down(xs)
+            padding-top: 0px
+    &-avatar
+        width: $avatar-width
+        height: $avatar-width
+        border-radius: 50%
+        text-align: center
+        background-color: #ddd
+        color: #000
+        font-size: 27px
+        margin-top: -$avatar-width/2
+        margin-bottom: 0px
+        margin-left: auto
+        margin-right: auto
+        font-family: 'Playfair Display', serif
+
+    svg
+        path
+            color: black
