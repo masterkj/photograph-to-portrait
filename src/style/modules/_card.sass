@@ -1,7 +1,8 @@
-$avatar-width: 50px
+$avatar-width: 55px
 
 .card
     transition: box-shadow 0.25s linear
+    width: 95% 
     &:hover
         box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.3)
     &-title
@@ -12,6 +13,7 @@ $avatar-width: 50px
         @include media-breakpoint-down(xs)
             font-size: 12px
     &-body
+        margin-top: -30px
         @include media-breakpoint-down(xs)
             padding-top: 0px
     &-avatar
@@ -20,13 +22,38 @@ $avatar-width: 50px
         border-radius: 50%
         text-align: center
         background-color: #ddd
-        color: #000
-        font-size: 27px
-        margin-top: -$avatar-width/2
+        // margin-top: -$avatar-width/2
+        transform: translateY(-50%)
         margin-bottom: 0px
+        margin-top: 0px
         margin-left: auto
         margin-right: auto
         font-family: 'Playfair Display', serif
+        position: relative
+        &-text
+            // transform: translateY(-50%)
+            font-weight: 300
+            display: block
+            position: absolute
+            top: 50%
+            left: 50%
+            transform: translate(-50%, -50%)
+            color: #000
+            font-size: 20px
+        &-tick
+            font-size: 10px
+            color: white
+            border-radius: 50%
+            width: 15px
+            height: 15px
+            background-color: $primary
+            display: block
+            position: absolute
+            bottom: 0
+            right: 0
+            svg
+                path
+                    color: white !important
 
     svg
         path

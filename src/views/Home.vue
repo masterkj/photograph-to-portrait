@@ -38,7 +38,7 @@
               <h2 class="section-title section-title--underlined">
                 section title
               </h2>
-              <p>
+              <p class="section__text section__text--spaced">
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia
                 consectetur eveniet et, esse dolores quasi voluptatibus
                 cupiditate, beatae quibusdam ipsam corporis ad similique
@@ -52,9 +52,9 @@
     <div class="section">
       <feedbacks />
     </div>
-    <div class="section">
+    <div class="section section--center">
       <img
-        class="image"
+        class="image image-center-bg w-md-50"
         src="https://s7.gifyu.com/images/so-wirds-gemacht-klein.gif?v=1585643348"
       />
     </div>
@@ -64,8 +64,8 @@
 
 <script>
 import slider from "@/components/slider";
-import feedbacks from "@/components/feedbacks-mini";
-import OrderNow from '@/components/orderNow.vue';
+import feedbacks from "@/components/feedbacks-slider";
+import OrderNow from "@/components/orderNow.vue";
 export default {
   components: {
     slider,
