@@ -1,6 +1,7 @@
 <template>
   <div>
-    <slider />
+    <slider
+    height="tall" />
     <div class="section section--center">
       <p class="font-md">
         Whether dog, cat, horse or hamster - we draw your very personal animal
@@ -8,7 +9,7 @@
       </p>
       <button class="btn btn-primary btn-lg">view products</button>
     </div>
-    <slider />
+    <slider height="tall"  />
 
     <!-- section title paragraph -->
     <div class="section section--center">

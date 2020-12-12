@@ -1,76 +1,83 @@
 <template>
-  <b-carousel
-    id="carousel-1"
-    :interval="4000"
-    controls
-    indicators
-    img-width="1024"
-    img-height="480"
-    background="#ababab"
-    style="text-shadow: 1px 1px 2px #333;"
+  <swiper
+    class="swiper"
+    :options="swiperOption"
   >
-    <!-- Text slides with image -->
-    <!-- <b-carousel-slide
-      class="slide"
-      img-src="https://picsum.photos/1024/480/?image=52"
-    ></b-carousel-slide> -->
-
-    <b-carousel-slide>
-      <template #img>
-        <img
-          width="1024"
-          height="480"
-          class="d-block img-fluid w-100 slide"
-          src="https://picsum.photos/1024/480/?image=55"
-          alt="image slot"
-        />
-      </template>
-    </b-carousel-slide>
-
-    <b-carousel-slide>
-      <template #img>
-        <img
-          width="1024"
-          height="480"
-          class="d-block img-fluid w-100 slide"
-          src="https://picsum.photos/1024/480/?image=55"
-          alt="image slot"
-        />
-      </template>
-    </b-carousel-slide>
-
-    <b-carousel-slide>
-      <template #img>
-        <img
-          width="1024"
-          height="480"
-          class="d-block img-fluid w-100 slide"
-          src="https://picsum.photos/1024/480/?image=55"
-          alt="image slot"
-        />
-      </template>
-    </b-carousel-slide>
-
-    <!-- Slide with blank fluid image to maintain slide aspect ratio -->
-    <b-carousel-slide
-      width="1024"
-      height="480"
-      class="slide"
-      caption="Blank Image"
-      img-blank
-      img-alt="Blank image"
+    <swiper-slide
+      v-for="(image, idx) in images"
+      :key="idx"
+      :class="`swiper-top-image `"
     >
-      <p>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse
-        eros felis, tincidunt a tincidunt eget, convallis vel est. Ut
-        pellentesque ut lacus vel interdum.
-      </p>
-    </b-carousel-slide>
-  </b-carousel>
+      <div :class="responsiveRatioClass">
+        <img
+          :class="`${ratio ? 'responsive-container-content' : ''} ${sliderHeight} slider-image`"
+          :src="image"
+        >
+      </div>
+    </swiper-slide>
+    <div
+      class="swiper-button-prev"
+      slot="button-prev"
+    ></div>
+    <div
+      class="swiper-button-next"
+      slot="button-next"
+    ></div>
+    <div
+      class="swiper-pagination"
+      slot="pagination"
+    ></div>
+
+  </swiper>
 </template>
 
 <script>
-export default {};
-</script>
+import { Swiper, SwiperSlide } from 'vue-awesome-swiper'
+import 'swiper/css/swiper.css'
+export default {
+  name: 'swiper-example-navigation',
+  title: 'Navigation',
+  // tall: 
+  props: ['height', 'ratio'],
+  components: {
+    Swiper,
+    SwiperSlide
+  },
+  data () {
+    return {
+      swiperOption: {
+        effect: 'fade',
+        pagination: {
+          el: '.swiper-pagination',
+          dynamicBullets: true
+        },
+        navigation: {
+          nextEl: '.swiper-button-next',
+          prevEl: '.swiper-button-prev'
+        }
 
-<style></style>
+      },
+      images: ['https://picsum.photos/1024/480/?image=55', 'https://cdn.gethypervisual.com/images/shopify/7543b1c5-7df2-4378-b74b-93784cbe6790/w1200_c2d5_beispiel-hund-1.jpg',
+        'https://picsum.photos/1024/480/?image=55']
+    }
+  },
+  computed: {
+    sliderHeight () {
+      switch (this.height) {
+        case 'tall':
+          return 'slider-image--tall'
+          break
+      }
+    },
+    responsiveRatioClass () {
+      switch (this.ratio) {
+        case '1:1':
+          return 'responsive-container--square'
+          break
+        default:
+          return ''
+      }
+    }
+  }
+}
+</script>

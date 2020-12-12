@@ -9,6 +9,8 @@
           [1024,4],
         ]"
         autoplay
+        navigationEnabled
+        autoplayTimeout="3000"
         autoplayHoverPause
       >
         <!-- [768, 3],
