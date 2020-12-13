@@ -59,30 +59,7 @@
                 plain
               ></b-form-file>
             </div>
-            <expandable-section
-              primary
-              class="mb-4"
-            >
-              <template v-slot:header>
-                <div>
-                  WICHTIG❗ How to choose the right photo
-                </div>
-              </template>
-              <template v-slot:body>
-                <p class="font-sm">
-                  In order for us to draw the portrait of your pet as detailed as possible, it is important that you send us a photo in good quality. The camera angle, brightness and distance also play an important role. Make sure your photo meets the requirements before you upload it.
-                </p>
-                <img
-                  class="image"
-                  src="https://cdn.shopify.com/s/files/1/0258/1918/5238/files/das-richtige-bild-auswaehlen_Zeichenflaeche_1.jpg?v=1567855152"
-                >
-                <p class="font-sm">
-                  You're still not sure? Then just send us your photo via Whatsapp or Instagram and we'll tell you if you can use it.
-                </p>
-                <a href="#">Whatsapp</a>
-                <a href="#">insta</a>
-              </template>
-            </expandable-section>
+            <warning-choose-photo />
             <button class="btn btn-lg btn-primary">
               order design
             </button>
@@ -97,42 +74,7 @@
     </div>
     <slider-paragraph reversed />
 
-    <!-- <div class="section section--center ">
-      <div class="w-md-75 centerize">
-        <h5>
-          ⭐ What our customers say ⭐
-        </h5>
-        <p class="text-md">
-          It is really important to us to give you a pleasure with our small works of art. In this way we want to thank you for the wonderful feedback we receive from you. This really means a lot to us ❤
-        </p>
-      </div>
-
-    </div> -->
-    <div class="section ">
-      <div class="w-md-75 centerize">
-        <expandable-section
-          qa
-          v-for="n in 5"
-          :key="n"
-        >
-          <template v-slot:header>
-            <div class="expandable-head-text">
-              How long will it take you to create my portrait?
-              <span style="display: inline-block; float: right; font-size: 30px">+</span>
-            </div>
-          </template>
-          <template v-slot:body>
-            Since we make each portrait individually for you and your darling, the production time is 3-5 working days. We want to take our time for every single picture in order to be able to capture even small details. But as they say - anticipation is the most beautiful joy ❤
-
-            If you decide to buy a high quality art print, you will receive it within 4-8 working days.
-
-            If you decide to buy our blanket, you will receive it within 8-12 working days.
-
-            We send the art print as well as the ceiling as DHL or DPD parcel.
-          </template>
-        </expandable-section>
-      </div>
-    </div>
+   <faq />
 
   </div>
 </template>
@@ -140,14 +82,16 @@
 <script lang="ts">
 import ColoredRadio from "@/components/colored-radio.vue";
 import SliderParagraph from "@/components/slider-paragraph.vue";
-import expandableSection from "@/components/expandable-section";
+import warningChoosePhoto from '@/components/warning-choose-photo'
 import SyncingSlider from "@/components/syncing-slider.vue";
+import faq from '@/components/faq'
 export default {
   components: {
     ColoredRadio,
-    expandableSection,
     SyncingSlider,
     SliderParagraph,
+    warningChoosePhoto,
+    faq
   },
   data() {
     return {

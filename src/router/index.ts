@@ -18,9 +18,24 @@ const routes: RouteConfig[] = [
     component: () => import(/* webpackChunkName: "Customer-opinions" */ '../views/Customer-opinions.vue'),
   },
   {
-    path: '/order-design',
-    name: 'Design now',
-    component: () => import(/* webpackChunkName: "Order-design" */ '../views/Order-design.vue'),
+    path: '/portrait-design',
+    name: 'Portrait design',
+    component: () => import(/* webpackChunkName: "portrait-design" */ '../views/Portrait-design.vue'),
+  },
+  {
+    path: '/watercolor-design',
+    name: 'Watercolor design',
+    component: () => import(/* webpackChunkName: "watercolor-design" */ '../views/Watercolor-design.vue'),
+  },
+  {
+    path: '/cuddly-design',
+    name: 'Cuddly design',
+    component: () => import(/* webpackChunkName: "cuddly-design" */ '../views/Cuddly-design.vue'),
+  },
+  {
+    path: '/shopping-cart',
+    name: 'Shopping cart',
+    component: () => import(/* webpackChunkName: "shopping-cart" */ '../views/Shopping-cart.vue'),
   },
 ];
 

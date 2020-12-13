@@ -10,7 +10,7 @@
         ]"
         autoplay
         navigationEnabled
-        autoplayTimeout="3000"
+        :autoplayTimeout="3000"
         autoplayHoverPause
       >
         <!-- [768, 3],

@@ -7,7 +7,7 @@
             <h4>
               paragraph title
             </h4>
-            <p class="p-4">
+            <p class="p-2">
               Lorem ipsum dolor sit amet consectetur adipisicing elit. In eaque at id quam animi aliquid aliquam voluptatum porro, repellendus enim facere ab cum quidem, provident, reprehenderit consequatur numquam facilis nemo?
             </p>
           </div>
